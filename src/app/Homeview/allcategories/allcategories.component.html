@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let category of allCategories">
+        <div class="card">
+          <img src="assets/images/w4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{category.name}}</h5>
+            <p class="card-text" *ngFor="let subcategory of category.services">
+               <a [routerLink]="['/subcategory',subcategory.id]">{{subcategory.name}}</a> 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

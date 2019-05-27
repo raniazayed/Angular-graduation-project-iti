@@ -1,0 +1,30 @@
+<app-freelanceheader></app-freelanceheader>
+<!-- FREELANCER PERSONAL INFO -->
+<div class="media">
+    <div class="media-left">
+      <img src="assets/images/user.png" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{personalInfo.fname}}{{personalInfo.lname}}</h4>
+      <p>{{personalInfo.PersonDescription }}</p>
+    </div>
+  </div>
+  <h2>My works</h2>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-4" *ngFor="let project of personalInfo.projects">
+        <div class="card">
+          <img src="assets/images/w4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{project.name}}</h5>
+            <p class="card-text" >
+             {{project.rate}}
+            </p>
+            <button class="btn" (click)="deleteProject(project.id)">Delete</button>
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+section{
+    height: 100vh;
+}
+.bg-nav{
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+}
+.line{
+    @extend %line;
+}
+.col-md-offset-3{
+    margin-left: 25%;
+}
+.addform{
+    padding: 30px;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+    margin: 30px -30px;
+   
+    h3{
+        text-transform: uppercase;
+        color: $mainColor;
+    }
+    .box{
+        border: 1px solid $mainColor;
+        @include rounded;
+        &:hover{
+            transition: 0.7s all ease-in-out;
+            transform: scale(1, 1.2);
+            color: #fff;
+            background-color: #0BAEAD;
+        }
+        button{
+            background: transparent;
+            border: none;
+            width: 50%;
+            cursor: pointer;
+            // font-weight: bold;
+            @extend %semisegoe;
+            outline: none;
+        }
+    }
+    // button.btn{
+    //     @include button;
+    // }
+}

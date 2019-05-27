@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let freelancer of freelancers">
+      <div class="media">
+        <img class="mr-3" src="../assets/images/w4.png" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0">{{freelancer.fName}}{{freelancer.lName}}</h5>
+          {{freelancer.totalrate}}
+          <button (click)="viewProfile(freelancer.id)">View profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

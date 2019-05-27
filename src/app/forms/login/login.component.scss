@@ -1,0 +1,52 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+.bg-nav{
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+}
+.grey{
+    font-size: 14px;
+    color: #333
+}
+input.ng-invalid.ng-touched{
+    // border: 1px solid red;
+}
+.btn{
+    background-color: $mainColor;
+    color: white;
+    border-width: 2px;
+    font-weight: 400;
+    font-size: 0.8571em;
+    line-height: 1.35em;
+    margin: 10px 1px;
+    border: none;
+    border-radius: 0.1875rem;
+    padding: 11px 22px;
+    cursor: pointer;
+}
+button:disabled{
+    background: #333
+}
+.login-bg{
+    background: url("../../../assets/images/signup.png");
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .loginform{
+        padding: 30px;
+        box-shadow: 0 1px 6px rgba(57,73,76,.35);
+        margin: 30px -30px;
+        background-color: white;
+        h3{
+            text-transform: uppercase;
+            color: $mainColor;
+            
+        }
+        .line{
+            @extend %line;
+        }
+        
+    }
+}    
+.mat-icon{
+    color: $mainColor;
+}

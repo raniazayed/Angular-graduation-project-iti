@@ -1,0 +1,78 @@
+//==================set BG IMAGE=============
+@mixin background-image($filePath,  $bgReapeat:no-repeat, $bgSize:cover) {
+    background-image: url($filePath);
+    background-repeat: $bgReapeat;
+    background-size: $bgSize;
+    // background-attachment: $bgAttachment;
+    // background-position: center;
+}
+//==================STYLE Font=============
+
+@mixin typoStyle($font:$segoeuiFont, $size:1rem, $weight:400){
+	font-family: $font;
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $size * 1.618;
+}
+//==================USE DEFAULT Fonts =============
+
+%regularsegoe{
+	@include typoStyle($segoeuiFont, 1.1rem, 400);
+}
+%boldsegoe{
+	@include typoStyle($segoeuiFont, 1.6rem, bold);
+}
+%regularOpenSans{
+	@include typoStyle($openSansFont, 1.2rem, 400);
+}
+%semisegoe{
+	@include typoStyle($openSansFont, 1.2rem, bold);
+}
+//==================BOX SHADOW =============
+
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+	@if $inset {
+	  @each $vendor in $vendors {
+			#{$vendor}box-shadow: inset $top $left $blur $spread $color;
+		}
+	} @else {
+	  @each $vendor in $vendors {
+			#{$vendor}box-shadow: $top $left $blur $spread $color;
+		}
+	}
+}
+
+// ==================ROUNDED====================
+@mixin rounded($radius: 0.5em) {
+    @each $vendor in $vendors {
+          #{$vendor}border-radius: $radius;
+      }
+  }
+//==================STYLE BTN ===================
+%btn{
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0.3rem 1rem;
+}
+@mixin  button ($bg:$mainColor,$borderColor:$mainColor,$btncolor:white){
+    background-color: $bg;
+    border: 1px solid $borderColor;
+    padding: 0.3rem 1.3rem ;
+    color : $btncolor;
+}
+//==================STYLE line ===================
+
+%line{
+    // width: 25px;
+    // height: 1px;
+    // display: block;
+    // background: white;
+    // margin: 0 auto;
+    width: 50px;
+    height: 3px;
+    display: inline-block;
+    background-color: $secondaryColor;
+}
+
+

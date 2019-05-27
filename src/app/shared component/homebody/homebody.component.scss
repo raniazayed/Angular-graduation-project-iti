@@ -1,0 +1,49 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+.card{
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+}
+.line{
+    @extend %line;
+}
+
+
+    h1{
+        color: $mainColor;
+        @extend %boldsegoe ;
+    }
+    .artdeal{
+        background: $bgColor;
+        .artdeal-content{
+            h3{
+                color: $mainColor;
+            }
+            p{
+                color: $fontcolor;
+                @extend %regularsegoe;
+                font-size: 0.8rem;
+                line-height: 1.2rem;
+            }
+            button{
+                @include button;
+                text-transform: uppercase;
+                @include rounded;
+            }
+        }
+    }
+// ART SECTION
+section.arts{
+    div.media{
+        background: $secondaryColor !important;
+        color: white;
+        img{
+            width: 50%;
+            margin: 20px;
+        }
+        .media-body{
+            margin-top: 20px;
+            margin-right: 20px;
+            @include typoStyle($segoeuiFont,0.8rem)
+        }
+    }
+}

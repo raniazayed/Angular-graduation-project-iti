@@ -1,0 +1,41 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+header{
+    // background-image: url("../../../assets/images/header.png");
+    .head-bg{
+        background-color: #F1F1F1;
+    }
+    .head2-bg{
+        background-color: $mainColor;
+    }
+    .header-content{
+        padding: 60px 0;
+
+        h1{
+            @extend %boldsegoe;
+            font-size: 4rem;
+            color:$mainColor;
+        }
+        p{
+            color: $fontcolor;
+            @extend %regularsegoe;
+            width: 70%;
+            font-size:16px;
+        }
+        button{
+            @include button;
+            cursor: pointer;
+            color: white;
+        }
+    }
+    img{
+        padding: 60px 0;
+    }
+}
+// MEDIA QUERY
+@media only screen and (max-width: 600px) {
+	
+	html{
+		font-size: 10px;
+    }
+}
