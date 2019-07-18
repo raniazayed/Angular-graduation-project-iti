@@ -5,8 +5,7 @@ import { environment } from './../../environments/environment';
   providedIn: 'root'
 })
 export class EnvironmentUrlService {
-  
-  public urlAddress: string = environment.urlAddress;
-  baseIp =  'http://192.168.137.42:2090/api';
   constructor() { }
+  public urlAddress: string = environment.urlAddress;
+  baseIp =  'http://192.168.43.180:2090/api';
 }

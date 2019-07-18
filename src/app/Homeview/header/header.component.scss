@@ -1,11 +1,12 @@
 @import '../../../assets/sass/variables';
 @import '../../../assets/sass/functions';
 header{
-    background-image: url("../../../assets/images/Group135.png");
-    img{
-        transform: translateX(-33%);
 
+    background-image: url("../../../assets/images/headbg.png");
+    .padding{
+        // padding: 50px 0;
     }
+  
     .h-100{
         height: 100%;
     }
@@ -38,15 +39,17 @@ header{
 
         h1{
             @extend %boldsegoe;
-            font-size: 4rem;
+            // font-size: 4rem;
             color:$mainColor;
+            font-size: 40px;
+
         }
         p{
             color: $fontcolor;
             @extend %regularsegoe;
             font-size:16px;
         }
-        button{
+        a{
             @include button;
             cursor: pointer;
             color: white;

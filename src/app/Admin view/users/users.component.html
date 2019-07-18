@@ -1,0 +1,19 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+  <div class="m-left">
+    <div *ngIf="userser.users">
+      <div class="row mt-5">
+        <div class="col-md-12 card-bg mb-3" *ngFor="let user of userser.users">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <p>{{user.email}}</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right">
+              <button  class="btn" (click)="openDialog(user.id)">verify</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

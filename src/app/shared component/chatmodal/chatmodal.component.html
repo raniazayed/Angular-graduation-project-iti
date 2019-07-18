@@ -1,0 +1,61 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div id="main-container" style="text-align:center">
+  <div class="container">
+    <button *ngIf="flag" (click)="start()" class="btn-primery">connect</button>
+    <button *ngIf="!flag" (click)="close()" class="btn-danger">disconnect</button>
+
+    <form (ngSubmit)="sendMessage()" #chatForm="ngForm">
+      <div>
+        <label for="message">Message</label>
+        <input type="text" id="message" name="message" [(ngModel)]="message">
+
+      </div>
+      <button class="btn-success" type="submit" id="sendmessage" [disabled]=" btnflag==false">
+        Send
+      </button>
+    </form>
+  </div>
+  <div *ngIf="messages">
+    <div class="container" *ngIf="messages.length > 0">
+      <div *ngFor="let message of messages">
+        <span
+          [ngClass]="{'btn-success':message.senderId==sender,'btn-warning': message.senderId==reciever}">{{message.message}}</span>
+      </div>
+    </div>
+  </div>
+
+</div> -->
+<div class="text-center">
+  <button *ngIf="flag" (click)="start()" class="btn ">connect</button>
+  <button *ngIf="!flag" (click)="close()" class="btn-danger">disconnect</button>
+</div>
+<div class="chat-box">
+  <div class="chatlogs">
+    <div class="chat">
+      <div *ngIf="messages">
+        <div class="container" *ngIf="messages.length > 0">
+          <div *ngFor="let message of messages" class="mb-4">
+            <div [ngClass]="{'sender-photo':message.senderId==sender,'reciever-photo': message.senderId==reciever}">
+            </div>
+            <p [ngClass]="{'sender':message.senderId==sender,'reciever': message.senderId==reciever}">
+              {{message.message}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-form d-flex align-items-start">
+    <!-- <text-area></text-area> -->
+
+    <form (ngSubmit)="sendMessage()" #chatForm="ngForm">
+      <div class="d-inline-block">
+        <label for="message">Message</label>
+        <input type="text" id="message" name="message" [(ngModel)]="message">
+      </div>
+      <button class="btn d-inline-block" type="submit" id="sendmessage" [disabled]=" btnflag==false">
+        Send
+      </button>
+    </form>
+  </div>
+</div>

@@ -5,29 +5,49 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" routerLink="/">logo</a>
-      <!-- <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2 nav-input" type="search" placeholder="Search" aria-label="Search">
-        <button class="absolute my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-      </form> -->
-      <a class="navbar-brand">
-        <mat-search-bar></mat-search-bar>
+      <a class="navbar-brand" routerLink="/">
+      <img src="assets/images/Logo.svg" class="img-fluid"  alt="">
       </a>
-
-
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item ">
-            <a class="nav-link nav-color mr-3" routerLink="/allcategories">All Categories<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link nav-color mr-3" *ngIf="loginstatus&&this.roleName=='customer'" routerLink="/customer/allcategories"
+              routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}">All Categories<span
+                class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-color mr-3" routerLink="/login">Login</a>
+            <a class="nav-link nav-color mr-3" *ngIf="!loginstatus||this.roleName=='admin'||this.roleName=='freelancer'" routerLink="/allcategories"
+              routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}">All Categories<span
+                class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-color mr-3" routerLink="/signup">Sign Up</a>
+            <a class="nav-link nav-color mr-3" *ngIf="!loginstatus" routerLink="/login" routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-color mr-3" *ngIf="!loginstatus" routerLink="/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link nav-color" *ngIf="loginstatus" routerLink="/customer/myrequests">myrequests</a> -->
+            <div class="dropdown" *ngIf="loginstatus&&this.roleName=='customer'">
+              <button class="nav-link nav-color butn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                myrequests
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" routerLink="/customer/myrequests">Requests</a>
+                <a class="dropdown-item" routerLink="/customer/notification">Notification </a>
+                <a class="dropdown-item" routerLink="/customer/history">History </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-color" *ngIf="loginstatus&&this.roleName=='customer'" routerLink="/customer/profile"> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-color mr-3"style="cursor: pointer"  *ngIf="loginstatus&&this.roleName=='customer'" (click)="logout()">Log Out</a>
           </li>
           <li class="nav-item nav-center">
-            <a class="nav-link nav-btn text-white" (click)="postJob()">Post a job</a>
+            <a class="nav-link nav-btn text-white"   (click)="postJob()">Post a job</a>
           </li>
         </ul>
 

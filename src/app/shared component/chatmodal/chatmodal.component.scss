@@ -1,0 +1,99 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+.sender,.reciever{
+width: 80%;
+padding: 15px;
+margin: 5px 10px 0;
+// background: $mainColor;
+color: white;
+font-size: 20px;
+border-radius: 10px;
+display: inline-block;
+vertical-align: bottom;
+
+}
+.sender{
+    background: #1adda4;
+}
+.reciever{
+    order: -1;
+    background: #2DC2D6;
+
+}
+
+.chat-form{
+    margin-top: 20px;
+    input{
+        background: #fbfbfb;
+        width: 75%;
+        height: 50px;
+        border: 2px solid #eee;
+        border-radius: 3px;
+        resize: none;
+        padding: 10px;
+        font-size: 18px;
+        color: #333;
+        &::-webkit-scrollbar{
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius: 5px;
+            background: rgba($color: #000000, $alpha: 0.1)
+        }
+        &:focus{
+            background: #fff;
+        }
+    }
+  
+}
+.btn{
+    @extend %btn;
+    background: $mainColor;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    &:hover{
+        background: $secondaryColor;
+    }
+}
+.chat-box{
+    // width: 500px;
+    // height: 600px;
+    min-width: 390px;
+    padding:25px;
+    margin:20px auto;
+    // box-shadow: 0 3px #ccc;
+
+}
+.chatlogs{
+    padding:10px;
+    width:100%;
+    height:450px;
+    background:#fbfbfb;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background: rgba($color: #000000, $alpha: 0.1)
+    }
+}
+.chat{
+    .sender-photo,.reciever-photo{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .reciever-photo{
+        
+        background: #2DC2D6;
+        float: right;
+    }
+    .sender-photo{
+        
+        background: #1adda4;
+    }
+}

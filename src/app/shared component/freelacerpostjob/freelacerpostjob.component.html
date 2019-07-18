@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<section class="postjob">
+  <div class="container">
+    <div class="row justify-content-center  ">
+      <div class="col-md-6  col-sm-12 w-70 mt-5 mb-5">
+        <h6 class="m-0 p-0">POST A JOB</h6>
+        <div class="line mb-4"></div>
+        <form [formGroup]="postjobForm" (ngsubmit)="send(postjobForm)">
+          <div class="form-row">
+            <!-- categories -->
+            <div class="form-group ">
+              <i class="fas fa-list-ul mr-3"></i>
+              <label for="" class="d-block">Category</label>
+              <select formControlName="Category" disabled class="form-control" (change)="onChangeCategory($event.target.value)">
+                <option value="allData.categoryId" aria-readonly="false"  [selected]="allData.categoryName">{{allData.categoryName}}</option>
+              
+              </select>
+              <!-- <textarea disabled cols="60" rows="10" [placeholder]="flag" formControlName="Category">
+              </textarea> -->
+            </div>
+          </div>
+          <div class="form-row">
+            <!-- getSubCategories -->
+            <div class="form-group ">
+              <i class="fas fa-list-ul mr-3"></i>
+              <label for="" class="d-block">SubCategory</label>
+              <select formControlName="SubCategory" disabled class="form-control">
+                <option  [value]="allData.serviceId" aria-readonly="false" [selected]="allData.serviceName">{{allData.serviceName}}
+                </option>
+              </select>
+              <!-- <textarea  cols="60" rows="10" [placeholder]="allData." readonly formControlName="SubCategory">
+              </textarea> -->
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <i class="fas fa-calendar-alt mr-3"></i>
+            <label for="">description</label>
+            <textarea class="d-block" name="" id="" cols="60" rows="10" formControlName="description"></textarea>
+            <span *ngIf="description.invalid &&description.touched" class="grey">
+              this is field is required
+            </span>
+          </div>
+          <div class="form-group ">
+            <!-- <i class="fas fa-calendar-alt mr-3"></i>
+            <label for="">Required Date</label>
+            <input type="text" class="d-block" cols="60" formControlName="requiredDate"> -->
+            <mat-form-field>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Required Date" formControlName="requiredDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            <span *ngIf="requiredDate.invalid &&requiredDate.touched" class="grey">
+              this is field is required
+            </span>
+          </div>
+          <button class="btn d-block"  (click)="send(postjobForm)" type="submit">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

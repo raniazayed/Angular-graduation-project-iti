@@ -1,0 +1,20 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+  <div class="m-left">
+    <div *ngIf="complains">
+      <div class="row mt-5">
+        <div class="col-md-12 card-bg mb-3" *ngFor="let complain of complains">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <h2 class="mb-4">{{complain.fName}} {{complain.lName}}</h2>
+              <p>{{complain.comment}}</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right">
+                <button class="btn mr-2 mt-3 d-inline-block" (click)="check(complain.serveId,complain.freelancerId)">check</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

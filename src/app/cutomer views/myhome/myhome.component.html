@@ -1,27 +1,55 @@
-<app-nav></app-nav>
-<header class="mb-5">
-    <div class="container">
-        <div class="col-md-8 head-bg">
-            <div class="row  align-items-center">
-                <div class="col-md-6 col-sm-12">
-                    <div class="header-content">
-                        <h1 class="mb-4">ART DEAL</h1>
-                        <p>is simply dummy text of the printing
-                            and typesetting industry. Lorem Ipsum
-                            has been the industry'shas been the industry'</p>
-                        <button class="btn mb-5">JOIN US</button>
+<app-navbar></app-navbar>
+<div *ngIf="customerProfile">
+    <!-- <img [src]="customerProfile.photo" class="img-fluid" alt="freelancerProfile-photo"> -->
+    <!-- <h1> {{freelancer.photo}}</h1> -->
+    <!-- <p>{{freelancer.photo}}</p> -->
+    <div class="container customer mb-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 col-sm-6 col-lg-6">
+                <div class="media align-items-center">
+                    <div class="media-left img-bg mr-3">
+                        <img [src]="customerProfile.photo" class="img-fluid" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h6>{{customerProfile.fName}}{{customerProfile.lName}}</h6>
+                    
+                        <p>{{customerProfile.phone}}</p>
+                        <!-- <p class="media-heading rating">
+                            <ngb-rating [rate]="customerProfile.totalrate"></ngb-rating>
+                        </p> -->
+                        <button class="btn" routerLink="/customer/EditProfile">Edit profile</button>
+    
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4 head2-bg">
-            <div class="col-md-6 col-sm-12">
-                <img src="../../../assets/images/herosec.png" class="img-fluid" alt="">
+    </div>
+</div>
+<div class="container w-70">
+    <h2 class="m-0 p-0">MY SERVICES</h2>
+    <div class="line mb-4"></div>
+    <!-- *ngIf="customerProfile.projects.length==3" -->
+    <div *ngIf="AcceptedHistoryReqs">
+        <div class="row" >
+            <div class="col-md-12 col-sm-12  mb-4"  *ngFor="let customerproject of AcceptedHistoryReqs">
+                <div class="media align-items-center">
+                    <div class="media-left img-bg mr-3">
+                        <img [src]="customerproject.photo" class="img-fluid" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h6>{{customerproject.projectName}}</h6>
+                        <p class="media-heading ">
+                            {{customerproject.service}}
+                        </p>
+                        <div class="rating">
+                            <ngb-rating [rate]="customerproject.rate"></ngb-rating>
+                        </div>
+    
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
-</header>
-<app-homebody></app-homebody>
+    <!-- <button class="btn" (click)="viewMore()">View More</button> -->
+</div>
 <app-footer></app-footer>

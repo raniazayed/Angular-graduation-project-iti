@@ -8,7 +8,7 @@
 }
 //==================STYLE Font=============
 
-@mixin typoStyle($font:$segoeuiFont, $size:1rem, $weight:400){
+@mixin typoStyle($font:$RalewayFont, $size:1rem, $weight:400){
 	font-family: $font;
 	font-size: $size;
 	font-weight: $weight;
@@ -17,16 +17,16 @@
 //==================USE DEFAULT Fonts =============
 
 %regularsegoe{
-	@include typoStyle($segoeuiFont, 1.1rem, 400);
+	@include typoStyle($RalewayFont, 1.1rem, 400);
 }
 %boldsegoe{
-	@include typoStyle($segoeuiFont, 1.6rem, bold);
+	@include typoStyle($RalewayBoldFont, 1.6rem, bold);
 }
 %regularOpenSans{
-	@include typoStyle($openSansFont, 1.2rem, 400);
+	@include typoStyle($RalewayFont, 1.2rem, 400);
 }
 %semisegoe{
-	@include typoStyle($openSansFont, 1.2rem, bold);
+	@include typoStyle($RalewayBoldFont, 1.2rem, bold);
 }
 //==================BOX SHADOW =============
 
@@ -54,6 +54,9 @@
     background-color: transparent;
     color: white;
     padding: 0.3rem 1rem;
+    &:hover{
+        background: $secondaryColor;
+    }
 }
 @mixin  button ($bg:$mainColor,$borderColor:$mainColor,$btncolor:white){
     background-color: $bg;
@@ -70,9 +73,28 @@
     // background: white;
     // margin: 0 auto;
     width: 50px;
-    height: 3px;
+    height: 4px;
     display: inline-block;
     background-color: $secondaryColor;
 }
+// ==============SHARED================
+%title{
+    @extend %boldsegoe;
+    color: $mainColor;
+    text-transform: uppercase
 
+}
 
+%rating{
+    color: #FFDA44!important;
+    font-size: 25px;
+}
+%img-bg{
+    background: $secondaryColor;
+    padding: 10px 0 0 10px;
+}
+%bg{
+    box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+    padding: 40px 60px;
+    background-color: #fff;
+}

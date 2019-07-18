@@ -1,5 +1,13 @@
 @import '../../../../assets/sass/variables';
 @import '../../../../assets/sass/functions';
+.butn{
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.pointer{
+    cursor: pointer
+}
 .nav-btn{
     @include button;
         // background-color: #f96332;
@@ -53,4 +61,8 @@
     padding-bottom: 0.75rem;
     // border-color: transparent
     border-radius:25px;
+}
+
+.main-color{
+    color:$mainColor !important;
 }

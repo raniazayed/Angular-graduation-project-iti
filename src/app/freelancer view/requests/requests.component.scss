@@ -1,0 +1,60 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+
+.line{
+    @extend %line;
+}
+h2{
+    @extend %title;
+
+}
+.requests{
+    background: url("../../../assets/images/postjobbg.png");
+    height: 100vh;
+}
+.w-70{
+    padding: 30px 40px;
+    background: white;
+    box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+
+}
+.danger{
+    color: red;
+}
+.btn{
+    background: $mainColor;
+    color: white;
+    padding: 7px 30px;
+    font-size: 20px;
+}
+.mat-raised-button{
+    padding: 5px 30px;
+}
+.media{
+    border-bottom: 1px solid #ddd;
+    padding: 25px 35px;
+    // background: #f9f9f9;
+    img{
+        width: 13%;
+        border-radius: 50%;
+    }
+    .media-body{
+        h5{
+            @extend %boldsegoe;
+            color: $mainColor;
+            text-transform: uppercase;
+        }
+        p{
+            color: $fontcolor;
+        }
+        span{
+            color: #ddd;
+        }
+    }
+}
+.btn-danger,mat-raised-button{
+   @extend %btn;
+   padding: 7px 30px;
+    font-size: 20px;
+    background-color: red;
+}

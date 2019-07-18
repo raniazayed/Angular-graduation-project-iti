@@ -1,41 +1,52 @@
 @import '../../../assets/sass/variables';
 @import '../../../assets/sass/functions';
-header{
-    // background-image: url("../../../assets/images/header.png");
-    .head-bg{
-        background-color: #F1F1F1;
-    }
-    .head2-bg{
-        background-color: $mainColor;
-    }
-    .header-content{
-        padding: 60px 0;
-
-        h1{
+html{
+    font-size: 10px
+}
+.w-70{
+    width: 70%;
+}
+.line{
+    @extend %line;
+}
+h2{
+    @extend %title;
+}
+.customer{
+.media{
+    margin-top: -90px;
+}
+}
+.btn{
+    @extend %btn;
+    background: $mainColor;
+}
+.media{
+    box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+    padding: 30px 50px;
+    border-radius: 0;
+    background: white;
+    .media-body{
+        h6{
+            color: $mainColor;
             @extend %boldsegoe;
-            font-size: 4rem;
-            color:$mainColor;
-        }
-        p{
-            color: $fontcolor;
-            @extend %regularsegoe;
-            width: 70%;
-            font-size:16px;
-        }
-        button{
-            @include button;
-            cursor: pointer;
-            color: white;
         }
     }
-    img{
-        padding: 60px 0;
+    .rating{
+      @extend  %rating;
+    }
+    .img-bg{
+        @extend %img-bg;
+    }
+    p{
+        color: $fontcolor;
+        @extend %regularOpenSans
     }
 }
 // MEDIA QUERY
 @media only screen and (max-width: 600px) {
-	
-	html{
-		font-size: 10px;
+    html{
+        font-size: 10px
     }
-}
+  }
+    

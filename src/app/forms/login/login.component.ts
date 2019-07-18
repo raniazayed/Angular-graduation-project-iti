@@ -1,10 +1,12 @@
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { LoginService } from 'src/app/services/login.service';
-import { first } from 'rxjs/operators';
+import { first, filter } from 'rxjs/operators';
+import { SaverouteService } from 'src/app/services/saveroute.service';
+// import { filter } from 'rxjs/operator/filter'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,17 +21,33 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: any;
+  previousUrl: string;
+  redirectUrl: string;
+  access: boolean;
 
   constructor(
+    private shared: SaverouteService,
     private router: Router,
     private loginser: LoginService,
     private route: ActivatedRoute,
     private authser: AuthenticationService,
     private title: Title) {
     this.title.setTitle('login');
+    console.log(this.router.url)
+    const prevUrl = '';
+
+    //   this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    // .subscribe(e => {
+    //   debugger;
+    //   console.log('prev:', this.previousUrl);
+    //   this.previousUrl = e.url;
+    //   console.log('prev url:', this.previousUrl);
+    // });
     // debugger;
-    // redirect to home if already logged in
-    if (this.authser.currentUserValue) {
+    // redirect to home if already logged 
+
+    if (this.authser.isLoggedIn) {
+      console.log("auth")
       this.router.navigate(['/']);
     }
   }
@@ -41,11 +59,9 @@ export class LoginComponent implements OnInit {
       Email: new FormControl(null, [Validators.required, this.validateEmail]),
       Password: new FormControl(null, [Validators.required])
     });
+    this.access=false;
 
-    // get return url from route parameters or default to '/'
-    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    this.returnUrl = this.route.snapshot.params
-    console.log(this.returnUrl);
+
   }
 
   get Email() {
@@ -56,7 +72,6 @@ export class LoginComponent implements OnInit {
   }
   validateEmail(control: FormControl): { [s: string]: boolean } {
     var valid = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    console.log('hi')
     if (valid.test(control.value)) {
       console.log(control.value)
       return null; // vaild
@@ -65,20 +80,56 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.submitted=true;
-    if(this.loginForm.invalid){
+
+    this.submitted = true;
+    // this.access=false;
+
+    if (this.loginForm.invalid) {
       return;
     }
     this.loading = true;
-    this.authser.login(this.Email.value,this.Password.value).pipe(first()).subscribe(
+    this.authser.login(this.Email.value, this.Password.value).pipe(first()).subscribe(
       data => {
         console.log('success')
+        this.shared.prevUrl;
+        console.log(this.shared.prevUrl);
+        // if((localStorage.getItem("currentUser"))
+        console.log(data)
+      if(JSON.parse(localStorage.getItem("currentUser")).roleName==="customer"){
+        this.router.navigate(["/customer/home"])
+      }else if(JSON.parse(localStorage.getItem("currentUser")).roleName==="freelancer"){
+        this.router.navigate(["/freelancer/freelancerhome"])
+      }
+      else if(JSON.parse(localStorage.getItem("currentUser")).roleName==="norole"){
+        this.router.navigate(["/pending"])
 
-          this.router.navigate([this.returnUrl]);
+      }else if((JSON.parse(localStorage.getItem("currentUser")).roleName==="admin")){
+        this.router.navigate(["/admin/Statistics"])
+      }
+      console.log(data)
+          // if(this.redirectUrl)
+          // if (this.redirectUrl == "/allcategories" || this.redirectUrl == "/") {
+          //   console.log("/allcategories");
+          //   this.router.navigate(['/customer/postjob'])
+          // }else if(this.redirectUrl=="/freelancerprofile/:id"){
+          //   console.log("/freelancerprofile")
+
+          // }else if(this.redirectUrl=="/subcategory/:id"){
+          //   console.log("/subcategory")
+
+          // }
+        
+        // this.router.navigate([this.shared.prevUrl]);
       },
       error => {
-        console.log(error)
+        console.log(error);
         this.loading = false;
+        if(error.ok==false){
+          this.access=true;
+          this.Email.setValue(" ");
+          this.Password.setValue(" ");
+
+        }
       });
     console.log(form)
     console.log(this.loginForm.get('Email').value)

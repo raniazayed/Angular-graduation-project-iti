@@ -1,0 +1,52 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+html{
+    font-size: 10px
+}
+.w-70{
+    width: 70%;
+}
+.line{
+    @extend %line;
+}
+h2{
+    @extend %title;
+}
+.freelancer{
+.media{
+    // margin-top: -90px;
+}
+}
+.media{
+    box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+    padding: 30px 50px;
+    border-radius: 0;
+    background: white;
+    .media-body{
+        h6{
+            color: $mainColor;
+            @extend %boldsegoe;
+        }
+    }
+    .rating{
+      @extend  %rating;
+    }
+    .img-bg{
+        @extend %img-bg;
+    }
+    p{
+        color: $fontcolor;
+        @extend %regularOpenSans
+    }
+    .btn{
+        @extend %btn;
+        background: $mainColor;
+    }
+}
+// MEDIA QUERY
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 10px
+    }
+  }
+    

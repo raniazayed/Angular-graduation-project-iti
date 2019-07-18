@@ -1,0 +1,40 @@
+
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+.postjob{
+    background: url("../../../assets/images/postjobbg.png");
+    h6{
+        @extend %title;
+    }
+    .line{
+        @extend %line;
+    }
+    .rating{
+        @extend %rating
+    }
+}
+.grey{
+    font-size: 14px;
+    color: red
+}
+section{
+    .btn{
+        @extend %btn;
+        background: $mainColor;
+    }
+    .w-70{
+        padding: 30px 40px;
+        background: white;
+        box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+
+    }
+    h5{
+        @extend %title;
+    }
+    p{
+        @extend %regularOpenSans;
+    }
+    i{
+        color:$mainColor;
+    }
+}

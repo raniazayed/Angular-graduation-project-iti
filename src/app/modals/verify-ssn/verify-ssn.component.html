@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="ssnData">
+    <div class="row">
+      <div class="col-md-12 col-sm-6">
+          <div class="media">
+            <img [src]="ssnData.ssnPhoto"  class="img-fluid mr-3" alt="">
+              <div class="media-body">
+                <h5 class="mt-0 mb-4">{{ssnData.fName}}{{ssnData.lName}}</h5>
+                <h6 class="mt-0 mb-4">{{ssnData.ssn}}</h6>
+                <button class="btn mr-2 mt-3 d-inline-block"  (click)="validate(ssnData.id)">validate</button>
+                <button class="btn mt-3 d-inline-block" (click)="Decline(ssnData.id)">Decline</button>
+              </div>
+            </div>
+      </div>
+      <!-- <div class="col-md-6">
+      </div> -->
+    </div>
+  </div>
+</div>

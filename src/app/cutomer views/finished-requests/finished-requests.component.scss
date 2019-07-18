@@ -1,0 +1,84 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+
+.line{
+    @extend %line;
+}
+h2{
+    @extend %title;
+
+}
+
+.requests{
+    // background: url("../../../assets/images/postjobbg.png");
+    // height:100vh;
+}
+.w-70{
+    // padding: 30px 40px;
+    // background: white;
+    width: 70%;
+    // box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+
+}
+.danger{
+    color: red;
+}
+.btn{
+    background: $mainColor;
+    color: white;
+    font-size: 20px;
+    padding: 4px 20px;
+
+}
+.mat-raised-button{
+    // padding: 5px 30px;
+}
+.media{
+    border-bottom: 1px solid #ddd;
+    padding: 25px 35px;
+    // background: #f9f9f9;
+    box-shadow: 0 1px 2px rgba(57, 73, 76, 0.35);
+    i{
+        color: $mainColor;
+        font-size: 18px;
+        margin-right: 8px;
+    
+    }
+    .btnn{
+        background: transparent;
+        border: none;
+        i{
+         color: $secondaryColor;
+         font-size: 18px;
+        }
+    }
+    // img{
+    //     width: 13%;
+    //     border-radius: 50%;
+    // }
+    .media-body{
+        h5{
+            @extend %boldsegoe;
+            color: $mainColor;
+            font-size: 1.4rem;
+            text-transform: capitalize;
+        }
+        p{
+            // color: $fontcolor;
+            @extend %regularOpenSans;
+
+        }
+        span{
+            color: $fontcolor
+        }
+    }
+    .butn{
+        background: transparent;
+        border: none;
+    }
+}
+
+
+.comment{
+    font-size: 0.9rem !important;
+}

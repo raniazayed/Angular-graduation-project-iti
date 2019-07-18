@@ -1,30 +1,84 @@
 <app-freelanceheader></app-freelanceheader>
 <!-- FREELANCER PERSONAL INFO -->
-<div class="media">
-    <div class="media-left">
-      <img src="assets/images/user.png" class="media-object" style="width:60px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">{{personalInfo.fname}}{{personalInfo.lname}}</h4>
-      <p>{{personalInfo.PersonDescription }}</p>
-    </div>
+<img src="assets/images/customerbg.svg" class="img-fluid" alt="freelancerProfile-photo">
+<div *ngIf="personalInfo">
+  <div class="container freelancer mb-5">
+      <div class="row align-items-center justify-content-center">
+          <div class="col-md-6 col-sm-6 col-lg-6">
+              <div class="media align-items-center">
+                  <div class="media-left img-bg mr-3">
+                      <img [src]="personalInfo.photo" class="img-fluid" alt="">
+                  </div>
+                  <div class="media-body">
+                      <h6>{{personalInfo.fullName}}</h6>
+                      <p>{{personalInfo.personDescription }}</p>
+                      <!-- <p class="media-heading rating">
+                          <ngb-rating [rate]="personalInfo.totalrate"></ngb-rating>
+                      </p> -->
+  
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-  <h2>My works</h2>
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-md-4" *ngFor="let project of personalInfo.projects">
-        <div class="card">
-          <img src="assets/images/w4.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{project.name}}</h5>
-            <p class="card-text" >
-             {{project.rate}}
-            </p>
-            <button class="btn" (click)="deleteProject(project.id)">Delete</button>
-       
+  <div class="container w-70">
+      <h2 class="m-0 p-0">my portofolio</h2>
+      <div class="line mb-4"></div>
+      <div class="row" *ngIf="personalInfo.projects">
+          <div class="col-md-12 col-sm-12  mb-4"  *ngFor="let project of personalInfo.projects">
+              <div class="media align-items-center">
+                  <div class="media-left img-bg mr-3">
+                      <img [src]="project.photo" class="img-fluid" alt="">
+                  </div>
+                  <div class="media-body">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+
+                        <h6>{{project.projectName}}</h6>
+                        <p class="media-heading ">
+                            {{ project.projectDescription}}
+                        </p>
+                      </div>
+                      <div class="col-md-6 col-sm-12 text-right">
+                        <button class="btn" (click)="deleteProject(project.id)">Delete</button>
+                        </div>
+                    </div>
+                      <!-- <div class="rating">
+                          <ngb-rating [rate]="project.rate"></ngb-rating>
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- <button class="btn" (click)="viewMore()">View More</button> -->
+  </div>
+  </div>
+<!-- <div *ngIf="personalInfo">
+  <div class="media" >
+      <div class="media-left">
+        <img src="assets/images/user.png" class="media-object" style="width:60px">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{personalInfo.fullName}}</h4>
+        <p>{{personalInfo.personDescription }}</p>
+      </div>
+    </div>
+    <h2>My works</h2>
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-4"  *ngFor="let project of personalInfo.projects">
+          <div class="card">
+            <img src="assets/images/w4.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{project.projectName}}</h5>
+              <p class="card-text" >
+               {{project.projectDescription}}
+              </p>
+              <button class="btn btn-primary" (click)="deleteProject(project.id)">Delete</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+</div> -->
 <app-footer></app-footer>

@@ -5,27 +5,39 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" routerLink="/freelancer/freelancerhome">logo</a>
-      <form class="form-inline my-2 my-lg-0">
+      <a class="navbar-brand" routerLink="/freelancer/freelancerhome">
+      <img src="assets/images/Logo.svg" class="img-fluid" alt="">
+      </a>
+      <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2 nav-input" type="search" placeholder="Search" aria-label="Search">
         <button class="absolute my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-      </form>
+      </form> -->
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link nav-color" routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}" routerLink="/freelancer/schedule">Schedule</a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/freelancer/requests">Requests<span class="sr-only">(current)</span></a>
+            <!-- <a class="nav-link" routerLink="/freelancer/requests">Requests<span class="sr-only">(current)</span></a> -->
+            <div class="dropdown butn" >
+                <button class="nav-link nav-color butn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  My Requests
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" routerLink="/freelancer/requests">Requests</a>
+                  <a class="dropdown-item" routerLink="/freelancer/history">History </a>
+                </div>
+              </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-color" routerLink="/freelancer/schedule">Schedule</a>
+            <a class="nav-link nav-color" routerLink="/freelancer/UploadWorks" routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}">Upload Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-color" routerLink="/freelancer/UploadWorks">Upload Works</a>
+            <a class="nav-link nav-color" routerLink="/freelancer/EditProfile" routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}">Edit Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-color" routerLink="/freelancer/EditProfile">Edit Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-btn text-white" (click)="logout()">log out</a>
+            <a class="nav-link nav-color btn" (click)="logout()" routerLinkActive="main-color" [routerLinkActiveOptions]="{exact:true}">Log out</a>
           </li>
         </ul>
 

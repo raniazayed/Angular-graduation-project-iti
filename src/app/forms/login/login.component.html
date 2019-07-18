@@ -5,7 +5,9 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" routerLink="">logo</a>
+      <a class="navbar-brand" routerLink="">
+        <img src="assets/images/Logo.svg" alt="">
+      </a>
     </nav>
   </div>
 </div>
@@ -21,6 +23,9 @@
               <div class="col-xs-12 col-sm-10 col-md-8">
                   <h3 class="m-0 p-0">LOg in </h3>
                   <div class="line"></div>
+                  <div class="alert alert-danger" role="alert" *ngIf="access" style="padding: 0.5rem 1.25rem">
+                      <strong>Warning!</strong> Please check your email or password .
+                   </div>
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
                   <div class="form-group">
                     <mat-form-field class="example-full-width d-block">
@@ -55,7 +60,9 @@
                       </span>
                     </span>
                   </div>
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <button type="submit" class="btn  mr-3">Login</button>
+               
+               
                   <a class="btn btn-primary" routerLink="/addform">sign up</a>
                 </form>
               </div>

@@ -1,0 +1,185 @@
+<app-navbar></app-navbar>
+<section class="requests">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-sm-12 w-70  mt-5 mb-5">
+
+
+        <div *ngIf="AcceptedHistoryReqs">
+          <h2 class="m-0 p-0 pt-4">Accepted Requests</h2>
+          <div class="line m-0 p-0 mb-4"></div>
+          <div *ngFor="let appliedReq of AcceptedHistoryReqs">
+            <div class="media mb-4">
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="row ">
+                      <div class="col-md-6 col-sm-6">
+                        <i class="fas fa-user"></i>
+                        <h5 class="mt-0 d-inline-block">{{appliedReq.fName}}
+                          {{appliedReq.lName}}</h5>
+
+                        <!-- <p>{{appliedReq.noteReply}}</p> -->
+                      </div>
+
+                      <div class="col-md-6 col-sm-6">
+                        <!-- <i class="fas fa-calendar-week"></i> -->
+                        <span class="d-inline-block">{{appliedReq.startDay}}</span>
+                        <!-- <span class="d-block">{{appliedReq.deliveryDate}}</span> -->
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <!-- <img src="assets/images/budget.svg" class="img-fluid mr-2" alt=""> -->
+                        <p class="d-inline-block" style="font-weight: bold;color: #014181">{{appliedReq.price}} $</p>
+                      </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-comments mr-2"></i>
+                      <p class="mb-0 comment">{{appliedReq.comment}}</p>
+                    </div>
+                    <div class="row mb-5">
+                      <div class="col-md-6 d-flex">
+                        <i class="fas fa-comments mr-2"></i>
+                        <p class="mb-0 comment">{{appliedReq.description}}</p>
+                      </div>
+                      <div class="col-md-6">
+
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- <div class="col-md-4 col-sm-12 text-right">
+                                <button class="btnn  mr-3" (click)="cancelAppliedReq(appliedReq.serveId)">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                                <button class="butn" (click)="openDialog(appliedReq.serveId)"> Ok
+                                </button>
+                            </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div *ngIf="CustomerCancelledHistoryReqs">
+          <h2 class="m-0 p-0 pt-4"> Cancelled Requests By me</h2>
+          <div class="line m-0 p-0 mb-4"></div>
+          <div *ngFor="let appliedReq of CustomerCancelledHistoryReqs">
+            <div class="media mb-4">
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="row ">
+                      <div class="col-md-6 col-sm-6">
+                        <i class="fas fa-user"></i>
+                        <h5 class="mt-0 d-inline-block">{{appliedReq.fName}}
+                          {{appliedReq.lName}}</h5>
+
+                        <!-- <p>{{appliedReq.noteReply}}</p> -->
+                      </div>
+
+                      <div class="col-md-6 col-sm-6">
+                        <!-- <i class="fas fa-calendar-week"></i> -->
+                        <span class="d-inline-block">{{appliedReq.startDay}}</span>
+                        <!-- <span class="d-block">{{appliedReq.deliveryDate}}</span> -->
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <!-- <img src="assets/images/budget.svg" class="img-fluid mr-2" alt=""> -->
+                        <p class="d-inline-block" style="font-weight: bold;color: #014181">{{appliedReq.price}} $</p>
+                      </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-comments mr-2"></i>
+                      <p class="mb-0 comment">{{appliedReq.comment}}</p>
+                    </div>
+                    <div class="row mb-5">
+                      <div class="col-md-6 d-flex">
+                        <i class="fas fa-comments mr-2"></i>
+                        <p class="mb-0 comment">{{appliedReq.description}}</p>
+                      </div>
+                      <div class="col-md-6">
+
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- <div class="col-md-4 col-sm-12 text-right">
+                                <button class="btnn  mr-3" (click)="cancelAppliedReq(appliedReq.serveId)">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                                <button class="butn" (click)="openDialog(appliedReq.serveId)"> Ok
+                                </button>
+                            </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- History of Cancelled Requests by Freelance -->
+        <div *ngIf="FreelancerCancelledHistoryReqs">
+          <h2 class="m-0 p-0 pt-4">customer Cancelled Requests</h2>
+          <div class="line m-0 p-0"></div>
+          <div *ngFor="let appliedReq of FreelancerCancelledHistoryReqs">
+            <div class="media mb-4">
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="row ">
+                      <div class="col-md-6 col-sm-6">
+                        <i class="fas fa-user"></i>
+                        <h5 class="mt-0 d-inline-block">{{appliedReq.fName}}
+                          {{appliedReq.lName}}</h5>
+
+                        <!-- <p>{{appliedReq.noteReply}}</p> -->
+                      </div>
+
+                      <div class="col-md-6 col-sm-6">
+                        <!-- <i class="fas fa-calendar-week"></i> -->
+                        <span class="d-inline-block">{{appliedReq.startDay}}</span>
+                        <!-- <span class="d-block">{{appliedReq.deliveryDate}}</span> -->
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <!-- <img src="assets/images/budget.svg" class="img-fluid mr-2" alt=""> -->
+                        <p class="d-inline-block" style="font-weight: bold;color: #014181">{{appliedReq.price}} $</p>
+                      </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-comments mr-2"></i>
+                      <p class="mb-0 comment">{{appliedReq.comment}}</p>
+                    </div>
+                    <div class="row mb-5">
+                      <div class="col-md-6 d-flex">
+                        <i class="fas fa-comments mr-2"></i>
+                        <p class="mb-0 comment">{{appliedReq.description}}</p>
+                      </div>
+                      <div class="col-md-6">
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

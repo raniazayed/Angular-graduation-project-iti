@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notfound',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotfoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
+  gohome(){
+    if(localStorage.getItem("currentUser")){
+      if(JSON.parse(localStorage.getItem("currentUser")).roleName=="customer"){
+        this.router.navigate(["/customer/home"])
+      }else if(JSON.parse(localStorage.getItem("currentUser")).roleName=="freelancer"){
+        this.router.navigate(["/freelancer/freelancerhome"])
+      }else if((JSON.parse(localStorage.getItem("currentUser")).roleName=="admin")){
+        this.router.navigate(["/admin/statistics"])
+      }
+    }else{
+      this.router.navigate([""])
 
+    }
+  }
 }

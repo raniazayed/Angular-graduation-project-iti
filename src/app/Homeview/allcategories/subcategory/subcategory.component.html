@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-6" *ngFor="let freelancer of freelancers">
       <div class="media">
@@ -7,10 +7,44 @@
         <div class="media-body">
           <h5 class="mt-0">{{freelancer.fName}}{{freelancer.lName}}</h5>
           {{freelancer.totalrate}}
+          <ngb-rating [rate]="3"></ngb-rating>
           <button (click)="viewProfile(freelancer.id)">View profile</button>
         </div>
       </div>
     </div>
   </div>
+</div> -->
+<div class="container img-bg pt-5 pb-4">
+  <img [src]="services.photo" alt=""> 
 </div>
+<div class="container w-70">
+  <h2 class="m-0 p-0">{{services.name}}</h2>
+  <div class="line mb-4"></div>
+
+  <div *ngIf="freelancers">
+    <div class="row mb-4 ">
+      <div class="col-lg-12 mb-4" *ngFor="let freelancer of freelancers">
+        <div class="media align-items-center">
+          <div class="media-left img-bg mr-3">
+            <img [src]="freelancer.photo" class="img-fluid" alt="">
+          </div>
+          <div class="media-body">
+  
+            <div class="d-inline-block w-80">
+              <h6>{{freelancer.fName}}{{freelancer.lName}}</h6>
+              <p class="media-heading rating">
+                <ngb-rating [rate]="freelancer.totalrate"></ngb-rating>
+              </p>
+            </div>
+            <div class="d-inline-block">
+              <button class="btn" (click)="viewProfile(freelancer.id)">View profile</button>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-footer></app-footer>

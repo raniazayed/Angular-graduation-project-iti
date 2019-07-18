@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="75" viewBox="0 0 75 75">
+  <defs>
+    <filter id="Rectangle_96" x="0" y="0" width="75" height="75" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_153" data-name="Group 153" transform="translate(-977 -915)">
+    <g transform="matrix(1, 0, 0, 1, 977, 915)" filter="url(#Rectangle_96)">
+      <path id="Rectangle_96-2" data-name="Rectangle 96" d="M28.5,0H55.575A1.425,1.425,0,0,1,57,1.425V28.5A28.5,28.5,0,0,1,28.5,57h0A28.5,28.5,0,0,1,0,28.5v0A28.5,28.5,0,0,1,28.5,0Z" transform="translate(66 6) rotate(90)" fill="#2dc2d6"/>
+    </g>
+    <g id="chat" transform="translate(1000.574 940.18)">
+      <g id="Group_138" data-name="Group 138" transform="translate(0 0)">
+        <g id="Group_137" data-name="Group 137" transform="translate(0 0)">
+          <path id="Path_139" data-name="Path 139" d="M2.463,31.479H27.731a2.466,2.466,0,0,1,2.463,2.463V48.716a2.466,2.466,0,0,1-2.463,2.463h-1.44c0-.034-7.774,0-7.774,0H2.463A2.466,2.466,0,0,1,0,48.716V33.942A2.466,2.466,0,0,1,2.463,31.479Zm0,18.3H27.731a1.06,1.06,0,0,0,1.059-1.059V33.942a1.06,1.06,0,0,0-1.059-1.059H2.463A1.06,1.06,0,0,0,1.4,33.942V48.716h0A1.06,1.06,0,0,0,2.463,49.775Z" transform="translate(0 -31.479)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_140" data-name="Group 140" transform="translate(19.232 5.128)">
+        <g id="Group_139" data-name="Group 139" transform="translate(0)">
+          <path id="Path_140" data-name="Path 140" d="M93.384,118.437h4.093a.7.7,0,0,1,0,1.4H93.384a.7.7,0,1,1,0-1.4Z" transform="translate(-92.682 -118.437)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_142" data-name="Group 142" transform="translate(11.934 9.148)">
+        <g id="Group_141" data-name="Group 141" transform="translate(0 0)">
+          <path id="Path_141" data-name="Path 141" d="M93.383,186.6h11.391a.7.7,0,1,1,0,1.4H93.383a.7.7,0,1,1,0-1.4Z" transform="translate(-92.681 -186.6)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_144" data-name="Group 144" transform="translate(5.466 5.128)">
+        <g id="Group_143" data-name="Group 143">
+          <path id="Path_142" data-name="Path 142" d="M232.3,118.437h9.666a.7.7,0,0,1,0,1.4H232.3a.7.7,0,0,1,0-1.4Z" transform="translate(-231.601 -118.437)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_146" data-name="Group 146" transform="translate(5.466 9.148)">
+        <g id="Group_145" data-name="Group 145" transform="translate(0 0)">
+          <path id="Path_143" data-name="Path 143" d="M353.108,186.6h2.542a.7.7,0,1,1,0,1.4h-2.542a.7.7,0,0,1,0-1.4Z" transform="translate(-352.406 -186.6)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_148" data-name="Group 148" transform="translate(16.966 13.168)">
+        <g id="Group_147" data-name="Group 147">
+          <path id="Path_144" data-name="Path 144" d="M93.383,254.765h6.359a.7.7,0,1,1,0,1.4H93.383a.7.7,0,1,1,0-1.4Z" transform="translate(-92.681 -254.765)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_150" data-name="Group 150" transform="translate(5.466 13.168)">
+        <g id="Group_149" data-name="Group 149">
+          <path id="Path_145" data-name="Path 145" d="M264.471,254.765h7.769a.7.7,0,1,1,0,1.4h-7.769a.7.7,0,1,1,0-1.4Z" transform="translate(-263.769 -254.765)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

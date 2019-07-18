@@ -1,0 +1,27 @@
+<!-- NAVBAR -->
+<section id="sidemenu">
+    <nav>
+        <a routerLink="/admin/Statistics" class="active"><i class="fas fa-home"></i> Statistics </a>
+        <a routerLink="/admin/tasks"><i class="far fa-sticky-note"></i>tasks</a>
+        <a routerLink="/admin/users"><i class="fas fa-cog"></i>users</a>
+        <a routerLink="/admin/complains"><i class="fas fa-cog"></i>complains</a>
+        <a (click)="logout()"><i class="fas fa-sign-out-alt"></i>logout</a>
+
+    </nav>
+</section>
+<!-- HEADER -->
+<header>
+    <h1>Rania Zayed</h1>
+    <div class="search-area inline-block">
+        <i class="fas fa-search darkgrey"></i>
+        <input type="text">
+    </div>
+    <div class="user-field inline-block">
+        <a href="#" class="add">+ Add</a>
+        <a href="#" class="notification"><i class="far fa-bell"></i> <span class="circle inline-block">3</span></a>
+        <a href="#">
+            <div class="user-img"></div>
+            <i class="fas fa-sort-down down"></i>
+        </a>
+    </div>
+</header>

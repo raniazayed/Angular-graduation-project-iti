@@ -1,17 +1,49 @@
 <app-navbar></app-navbar>
-<div class="container">
-    <div class="row">
-      <div class="col-md-4" *ngFor="let category of allCategories">
-        <div class="card">
-          <img src="assets/images/w4.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{category.name}}</h5>
-            <p class="card-text" *ngFor="let subcategory of category.services">
-               <a [routerLink]="['/subcategory',subcategory.id]">{{subcategory.name}}</a> 
-            </p>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let category of allCategories">
+      <div class="card">
+        <img src="assets/images/w4.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{category.name}}</h5>
+          <p class="card-text" *ngFor="let subcategory of category.services">
+            <a [routerLink]="['/subcategory',subcategory.id]">{{subcategory.name}}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container w-70">
+  <h2 class="m-0 p-0">ALL Categories</h2>
+  <div class="line mb-4"></div>
+  <div class="row mb-4">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let category of allCategories">
+      <div class="card text-center">
+        <div class="img-bg" >
+          <img [src]="category.image" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title p-0 m-0 text-center">{{category.name}}</h5>
+          <div class="line "></div>
+          <div class="card-text p-0 m-0 text-center" *ngFor="let subcategory of category.services">
+            <div *ngIf="loginstatus">
+
+              <a [routerLink]="['/customer/subcategory',subcategory.id]" class="text-center">{{subcategory.name}}</a>
+            </div>
+            <div *ngIf="!loginstatus">
+
+                <a [routerLink]="['/subcategory',subcategory.id]" class="text-center">{{subcategory.name}}</a>
+              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <app-footer></app-footer>
+  <!-- <ul class="list-group">
+      <li  *ngFor="let name of array;index as i" class="list-group-item mb-5" >
+        {{i}}-{{name}}
+      </li>
+    </ul> -->
+</div>
+<app-footer></app-footer>

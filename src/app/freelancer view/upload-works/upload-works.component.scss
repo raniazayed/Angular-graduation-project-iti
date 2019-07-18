@@ -1,0 +1,31 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+.pink-textarea textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid $secondaryColor;
+    box-shadow: 0 1px 0 0 $secondaryColor;
+}
+.active-pink-textarea.md-form label.active {
+    color:  $secondaryColor;
+}
+.uploadFiles{
+    background: url("../../../assets/images/postjobbg.png")
+}
+.upload{
+    @extend %bg;
+    p{
+        @extend %regularsegoe;
+    }
+    .btn{
+        @extend %btn;
+        background: $mainColor;
+    }
+    h2{
+        @extend %title;
+    }
+    .line{
+        @extend %line;
+    }
+    .red{
+        color: red;
+    }
+}

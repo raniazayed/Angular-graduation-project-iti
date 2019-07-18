@@ -1,3 +1,4 @@
+import { Mail } from './../interfaces/mail';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { EnvironmentUrlService } from './environment-url.service';
@@ -14,32 +15,32 @@ export class LoginService {
   }
   baseIp:string;
   // USER REGESTERATION
-  registerApi = 'http://192.168.137.42:2090/api';
+  // registerApi = 'http://192.168.137.163:2090/api';
   userregister(user,flag) {
-    return this.http.post(`${this.registerApi}/Users?RoleName=${flag}`, user);
+    return this.http.post(`${this.baseIp}/Users?RoleName=${flag}`, user);
 
   }
   // customer REGESTERATION
   customerregister(customer,CustomerId) {
-    return this.http.post(`${this.registerApi}/Customers/${CustomerId}`, customer);
+    return this.http.post(`${this.baseIp}/Customers/${CustomerId}`, customer);
   }
   // freelancer REGESTERATION
   freelancerregister(freelancer,freelanceId) {
-    return this.http.post(`${this.registerApi}/Freelancers/${freelanceId}`, freelancer);
+    return this.http.post(`${this.baseIp}/Freelancers/${freelanceId}`, freelancer);
   }
  
 
   // GET CATEGORIES 
-  apidropdownUrl = 'http://192.168.137.42:2090/api';
+  // apidropdownUrl = 'http://192.168.137.163:2090/api';
   getcategories(){
-    return this.http.get(`${this.apidropdownUrl}/Categories`).pipe(
+    return this.http.get(`${this.baseIp}/Categories`).pipe(
       catchError(this.handleError)
     )
   }
   // GET SubCATEGORIES 
 
   getsubcategories(Id: number) {
-    return this.http.get(`${this.apidropdownUrl}/Services/AllServices/${Id}`).pipe(
+    return this.http.get(`${this.baseIp}/Services/AllServices/${Id}`).pipe(
       catchError(this.handleError)
     );
   }
@@ -56,7 +57,7 @@ export class LoginService {
   checkEmailDb(email){
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/json');
-    return this.http.post(`${this.registerApi}/Users/Email`, email, {"headers": headers});
+    return this.http.get<Mail>(`${this.baseIp}/Users/Email?email=${email}`);
   }
   // check if role match
   roleMatch(allowedRoles): boolean {

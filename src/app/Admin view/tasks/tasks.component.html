@@ -1,0 +1,21 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+  <div class="m-left">
+    <div *ngIf="taskService.tasks">
+      <div class="row mt-5">
+        <div class="col-md-12 card-bg mb-3" *ngFor="let task of taskService.tasks">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <h2>{{task.fName}} {{task.lName}}</h2>
+              <p>{{task.freelancerTaskAnswer}}</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right">
+                <button class="btn mr-2 mt-3 d-inline-block"  (click)="validate(task.serviceTaskID,task.freelancerID)">validate</button>
+                <button class="btn mt-3 d-inline-block" (click)="Decline(task.serviceTaskID,task.freelancerID)">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

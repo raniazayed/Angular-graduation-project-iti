@@ -1,0 +1,37 @@
+<div class="bg-nav">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" routerLink="">
+        <img src="assets/images/Logo.svg" class="img-fluid" alt="">
+      </a>
+    </nav>
+  </div>
+</div>
+<section class="task">
+  <div class="container">
+    <div class="row justify-content-center pt-5">
+      <div class="col-md-6 col-sm-12 task-bg">
+        <h2 class="m-0 p-0">freelancer Task</h2>
+        <div class="line m-0 mb-4 d-block"></div>
+        <p>Freelancer Task</p>
+        <!-- <label for=""></label> -->
+        <div *ngIf="task">
+
+          <textarea  [value]="task.servTaskDTO.description" disabled  cols="60" rows="10" >
+          </textarea>
+        </div>
+        <form action="" [formGroup]="taskForm" (ngSubmit)="send(taskForm)">
+          <p>Reply Answer</p>
+          <textarea name="" id="" cols="60" rows="10" class="mb-4" formControlName="Description" >
+          </textarea>
+          <!-- <input type="text" formControlName="Description"> -->
+          <button class="btn d-block" type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

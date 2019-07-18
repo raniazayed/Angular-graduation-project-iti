@@ -1,9 +1,49 @@
 <app-navbar></app-navbar>
-<div class="container">
-   <!-- <h1> {{freelancer.photo}}</h1> -->
-   <!-- <p>{{freelancer.photo}}</p> -->
+<img [src]="freelancer.photo" class="img-fluid" alt="freelancerProfile-photo">
+<!-- <h1> {{freelancer.photo}}</h1> -->
+<!-- <p>{{freelancer.photo}}</p> -->
+<div class="container freelancer mb-5">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 col-sm-6 col-lg-6">
+            <div class="media align-items-center">
+                <div class="media-left img-bg mr-3">
+                    <img [src]="freelancer.photo" class="img-fluid" alt="">
+                </div>
+                <div class="media-body">
+                    <h6>{{freelancer.fName}} {{freelancer.lName}}</h6>
+                    <p class="media-heading rating">
+                        <!-- <ngb-rating [rate]="freelancer.totalrate"></ngb-rating> -->
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<h1>portofolio</h1>
+<div class="container w-70">
+    <h2 class="m-0 p-0">my services</h2>
+    <div class="line mb-4"></div>
+    <div class="row" *ngIf="freelancer.projects">
+        <div class="col-md-12 col-sm-12  mb-4"  *ngFor="let freelancerproject of freelancer.projects">
+            <div class="media align-items-center">
+                <div class="media-left img-bg mr-3">
+                    <img [src]="freelancerproject.photo" class="img-fluid" alt="">
+                </div>
+                <div class="media-body">
+                    <h6>{{freelancerproject.projectName}}</h6>
+                    <p class="media-heading ">
+                        {{ freelancerproject.ProjectDescription}}
+                    </p>
+                    <div class="rating">
+                        <ngb-rating [rate]="freelancerproject.rate"></ngb-rating>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="btn" (click)="viewMore()">View More</button> -->
+</div>
 <!-- <div class="container">
     <div class="row" *ngFor="let freelancerproject of freelancer.projects">
         <div class="col-md-4">

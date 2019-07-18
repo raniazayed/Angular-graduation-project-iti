@@ -1,0 +1,10 @@
+<form [formGroup]="freelancerreplyForm" (ngSubmit)="onSubmit(freelancerreplyForm)">
+  <div class="form-group">
+    <label>price</label>
+    
+    <input formControlName="Price" class="form-control mb-4">
+    <label>NoteReply</label>
+    <input formControlName="NoteReply" class="form-control mb-4">
+      <button class="btn " type="submit"  (click)="onSubmit(freelancerreplyForm)">send</button>
+    </div>
+</form>

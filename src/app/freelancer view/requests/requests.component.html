@@ -1,8 +1,79 @@
 <app-freelanceheader></app-freelanceheader>
-<!-- <mat-card>
-    <button mat-button>All</button>
-    <button mat-raised-button>Of</button>
-    <button mat-raised-button color="primary">The</button>
-    <button mat-raised-button color="accent">Buttons</button>
-  </mat-card> -->
-<app-footer></app-footer>
+<section class="requests">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-sm-12 w-70  mt-5 mb-5">
+        <div *ngIf="pendreqs">
+          <h2 class="m-0 p-0 pt-4">Pending</h2>
+          <div class="line m-0 p-0"></div>
+          <div *ngFor="let pendreq of pendreqs">
+            <div class="media">
+              <!-- <img class="mr-4 img-fluid" src="assets/images/user.png" alt="Generic placeholder image"> -->
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-md-8 col-sm-12">
+                    <p>CustomerName: {{pendreq.fName}} {{pendreq.lName}}</p>
+                    <p>ServiceDescripton: {{pendreq.description}}</p>
+                    <p>StartDate: {{pendreq.startDay}}</p>
+                  </div>
+                  <div class="col-md-4 col-sm-12 text-right">
+                    <button class="btn-danger mr-3" (click)="cancelpendreq(pendreq.serveId )">Decline</button>
+                    <button mat-raised-button (click)="accept(pendreq.serveId )">Accept</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div *ngIf="declinedReqs">
+            <h2 class="m-0 p-0 pt-4">Declined msgs</h2>
+            <div class="line m-0 p-0"></div>
+            <div *ngFor="let declinereq of declinedReqs">
+              <div class="media">
+                <img class="mr-4 img-fluid" src="assets/images/user.png" alt="Generic placeholder image">
+                <div class="media-body">
+                  <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                      <p>{{declinereq.message}}</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12 text-right">
+                      <button class=" btn-danger" (click)="deleteReq(declinereq.notificationId)">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="appliedReqs">
+            <div *ngFor="let appliedReq of appliedReqs">
+                <h2>Applied msgs</h2>
+              <div class="line m-0 p-0"></div>
+              <div class="media">
+                <img class="mr-4 img-fluid" src="assets/images/user.png" alt="Generic placeholder image">
+                <div class="media-body">
+                  <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                      <p>CustomerName: {{appliedReq.fName}} {{appliedReq.lName}}</p>
+                      <p>ServiceDescripton: {{appliedReq.description}}</p>
+                      <p>StartDate: {{appliedReq.startDay}}</p>
+                      <p>DeliveryDate: {{appliedReq.deliveryDate}}</p>
+                      <p>Price: {{appliedReq.price}}</p>
+                      <p>NoteReply: {{appliedReq.noteReply}}</p>
+                      <p>Comment: {{appliedReq.comment}}</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12 text-right">
+                    
+                      <button class="btn btn-danger mr-3" (click)="cancelpendreq(appliedReq.serveId)">cancel</button>
+                      <button mat-raised-button (click)="openDialog(appliedReq.serveId)">Start chat
+                        </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,3 +1,78 @@
 <app-freelanceheader></app-freelanceheader>
 
-<app-footer></app-footer>
+<!-- <label for="singleFile">Upload file</label>
+<input id="singleFile" type="file" [fileUploadInputFor]="fileUploadQueue" />
+<br>
+
+<mat-file-upload-queue #fileUploadQueue [fileAlias]="'file'"
+    [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+
+    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload> -->
+
+
+<!-- </mat-file-upload-queue>
+    <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+        Just drag and drop files here
+    </div>
+    
+    
+    <div style="width: 500px">
+        <mat-file-upload-queue #fileUploadQueue
+            [fileAlias]="'file'"
+            [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'" multiple>
+    
+            <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+        </mat-file-upload-queue>
+    </div> -->
+<section class="uploadFiles">
+    <div class="container">
+        <div class="row justify-content-center pt-5 pb-5">
+            <div class="col-md-6 col-sm-12">
+                <div class="upload">
+                    <h2 class="p-0 m-0">upload works</h2>
+                    <div class="line mb-4"></div>
+                    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit(uploadForm)">
+                        <!-- <p-fileUpload mode="basic" name="demo[]"  accept="image/*" maxFileSize="1000000" (change)="onBasicUpload($event)" auto="true"></p-fileUpload> -->
+                        <!-- <img [src]="imageUrl" class="img-fluid" alt=""> -->
+                        <!-- <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">Image</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Address</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let user of users">
+                              <td><img [src]="createImgPath(user.imgPath)" alt="profile picture" style="width:60px; height:60px;"></td>
+                              <td>{{user.name}}</td>
+                              <td>{{user.address}}</td>
+                            </tr>
+                          </tbody>
+                        </table> -->
+                        <input type="file" #file placeholder="Choose file" formControlName="uploadFile" (change)="uploadFile(file.files)" style="background: #014181" multiple>
+<!-- 
+                        <input type="file" formControlName="uploadFile" name="uploadFile" accept="image/" multiple
+                            (change)="onBasicUpload($event.target.files)" maxFileSize="200000"> -->
+                    
+                        <div class="md-form mb-4 mt-4 pink-textarea active-pink-textarea-2">
+                            <p>project Name</p>
+                            <input formControlName="projectName" class="form-control mb-3">
+                            <span *ngIf="projectName.invalid &&projectName.touched" class="red d-block">
+                                this is field is required
+                            </span>
+                            <p>Description</p>
+                            <textarea id="Description" formControlName="Description" class="md-textarea form-control"
+                                rows="3"></textarea>
+                            <span *ngIf="Description.invalid &&Description.touched" class="red d-block">
+                                this is field is required
+                            </span>
+                        </div>
+
+                        <button class="btn" type="submit" [disabled]="uploadForm.invalid">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

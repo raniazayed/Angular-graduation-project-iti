@@ -1,3 +1,57 @@
 <app-freelanceheader></app-freelanceheader>
+<!-- FREELANCER PERSONAL INFO -->
+<img src="assets/images/customerbg.svg" class="img-fluid" alt="freelancerProfile-photo">
+<div *ngIf="personalInfo">
+    <div class="container freelancer mb-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+                <div class="media align-items-center">
+                    <div class="media-left img-bg mr-3">
+                        <img [src]="personalInfo.photo" class="img-fluid" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h6>{{personalInfo.fullName}}</h6>
+                        <p>{{personalInfo.personDescription }}</p>
+                        <!-- <p class="media-heading rating">
+                              <ngb-rating [rate]="personalInfo.totalrate"></ngb-rating>
+                          </p> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-5">
+    <div *ngIf="schedules">
+        <h2 class="m-0 p-0">Schedules</h2>
+        <div class="line mb-4"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <table class="customers">
+                    <tr>
+                        <th>PROJECT NAME</th>
+                        <th>CUSTOMER NAME</th>
+                        <th>START DATE</th>
+                        <th>DEADLINE</th>
+                    </tr>
+                 
+                    <tr *ngFor="let schedule of schedules">
+                    <td>{{schedule.description}}</td>
+                    <td>{{schedule.fName}} {{schedule.fLame}}</td>
+                    <td>{{schedule.startDay}}</td>
+                    <td>{{schedule.deliveryDate}}</td>
+
+                
+                    </tr>
+
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
 
 <app-footer></app-footer>

@@ -1,3 +1,90 @@
-<p>
-  postajob works!
-</p>
+<app-navbar></app-navbar>
+<section class="postjob">
+  <div class="container">
+    <div class="row justify-content-center  ">
+      <div class="col-md-6  col-sm-12 w-70 mt-5 mb-5">
+        <h6 class="m-0 p-0">POST A JOB</h6>
+        <div class="line mb-4"></div>
+        <form [formGroup]="postjobForm" (ngsubmit)="send(postjobForm)">
+          <!-- categories -->
+          <div class="form-group ">
+            <i class="fas fa-list-ul mr-3"></i>
+            <label for="">Category</label>
+            <select formControlName="Category" class="form-control" (change)="onChangeCategory($event.target.value)">
+              <option value="">Select Category...</option>
+              <option *ngFor="let Category of getCategories" [value]="Category.id">{{Category.name}}</option>
+            </select>
+            <span *ngIf="Category.invalid &&Category.touched" class="grey">
+              this is field is required
+            </span>
+          </div>
+          <!-- getSubCategories -->
+          <div class="form-group">
+            <i class="fas fa-list-ul mr-3"></i>
+            <label for="">Services</label>
+            <select formControlName="SubCategory" class="form-control"(change)="onChangeSubCategory($event.target.value)">
+              <option value="">Select SubCategory...</option>
+              <option *ngFor="let SubCategory of getSubCategories" [value]="SubCategory.id">{{SubCategory.name}}
+              </option>
+            </select>
+            <span *ngIf="SubCategory.invalid &&SubCategory.touched" class="grey">
+              this is field is required
+            </span>
+          </div>
+
+
+          <div class="form-group ">
+            <i class="fas fa-calendar-alt mr-3"></i>
+            <label for="">Description</label>
+            <textarea class="d-block" name="" id="" cols="60" rows="10" formControlName="description"></textarea>
+            <span *ngIf="description.invalid && description.touched" class="grey">
+              this is field is required
+            </span>
+          </div>
+          <div class="form-group ">
+            <!-- <i class="fas fa-calendar-alt mr-3"></i> -->
+            <!-- <label for="">Required Date</label> -->
+            <!-- <input type="text" class="d-block"  cols="60"  formControlName="requiredDate"> -->
+            <mat-form-field>
+              <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Required Date" formControlName="requiredDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <span *ngIf="requiredDate.invalid &&requiredDate.touched" class="d-block grey">
+              this is field is required
+            </span>
+          </div>
+          <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
+          <div *ngIf="allfreelancers" >
+            <div class="row">
+
+              <div  class="form-group col-md-6 col-sm-12" *ngFor="let freelancer of allfreelancers">
+                <div class="card text-center" >
+                    <div class="img-bg">
+                        <img [src]="freelancer.photo" class="card-img-top" alt="...">
+                      </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{freelancer.fName}}</h5>
+                    <p class="card-text">
+                        {{freelancer.totService}}
+                    </p>
+                    <p class="card-text rating">
+                        <ngb-rating [rate]="freelancer.totalrate"></ngb-rating>
+                    </p>
+                    <input class="btn text-white mr-2" type="text" value="" placeholder="select" (click)="selectCard(freelancer.id)" formControlName="selectedfreelancer"  >
+                    <!-- <span *ngIf="selectedfreelancer.invalid &&selectedfreelancer.touched" class="grey d-block">
+                        this is field is required
+                      </span> -->
+                    <button mat-raised-button (click)="openDialog()">View </button>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <button class="btn" (click)="viewmore()">view more</button>
+          <button class="btn d-block" (click)="send(postjobForm)" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

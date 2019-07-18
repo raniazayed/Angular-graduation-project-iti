@@ -1,86 +1,127 @@
 <div class="container">
   <h1 class="p-0 m-0">Most Rated Projects</h1>
   <div class="line"></div>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let project of ratedprojects">
+  <div class="row padding">
+    <div class="col-md-3 mb-4" *ngFor="let project of ratedprojects">
       <div class="card">
-        <img src="assets/images/art2" class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="assets/images/person1.jpg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
           <h5 class="card-title">{{project.fName}}{{project.lName}}</h5>
           <p class="card-text">
             {{project.description}}</p>
-          <p class="card-text"><small class="text-muted"><i class="fas fa-star"></i><i class="far fa-star"> </i><i
-                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></small>{{project.rate}}
+          <p class="card-text rating">
+            <ngb-rating [rate]="project.rate"></ngb-rating>
           </p>
         </div>
       </div>
     </div>
   </div>
 </div>
-  <!-- ART DEAL SECTION -->
-  <section class="artdeal mb-5 pt-5 pb-5">
-    <div class="container">
-      <div class="row justify-content-center  align-items-center">
-        <div class="col-md-6">
-          <img src="assets/images/Group 124.svg" class="img-fluid" alt="">
-        </div>
-        <div class="col-md-4 mx-auto artdeal-content">
-          <div>
-            <h3>ART FOR SALE</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing
-              and typesetting industry. Lorem Ipsum has been
-              the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen
-              book.
-            </p>
-            <button class="text-center"> join us </button>
-          </div>
+<!-- ART DEAL SECTION -->
+<section class="artdeal mb-5 pt-5 pb-5">
+  <div class="container w-70">
+    <div class="row padding justify-content-center  align-items-center">
+      <div class="col-md-6">
+        <img src="assets/images/artdeaal.svg" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-4 mx-auto artdeal-content">
+        <div>
+          <h3 class="mb-3">About Us</h3>
+          <p class="mb-4">Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been
+            the industry's standard dummy text ever since the
+            1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen
+            book.
+          </p>
+          <a routerLink="/signup" class="btn text-center" > join us </a>
         </div>
       </div>
     </div>
-  </section>
-  <!-- ART SECTION -->
-  <section class="arts mb-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4  mb-2">
-          <div class="media media-bg">
-            <img class="mr-3 img-fluid" src="assets/images/art3.png" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Art Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-            </div>
+  </div>
+</section>
+<!-- ART SECTION -->
+<section class="arts mb-5">
+  <div class="container">
+    <h1 class="p-0 m-0 mt-5">HOW IT WORKS</h1>
+    <div class="line"></div>
+  </div>
+  <div class="container w-70">
+      <div class="row padding">
+        <div class="col-md-4 col-sm-12 card-bg">
+          <img src="assets/images/secondcol.svg" class="img-fluid mb-3" alt="">
+          <div class="border-right">
+            <h5 class="mb-3">post a job</h5>
+            <p class="mr-3"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+              Cras purus odio Nulla vel metus scelerisque</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4  mb-2">
-          <!-- <div class="row">
-            <div class="col-md-6">
-              <img src="assets/images/art2.png" class="img-fluid" alt="">
+        <div class="col-md-4 col-sm-12 card-bg">
+          <img src="assets/images/game-developer.svg" class="img-fluid mb-3" alt="">
+          <div class="border-right">
+            <h5 class="mb-3">Freelancer come</h5>
+            <p class="mr-3"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+              Cras purus odio Nulla vel metus scelerisque</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 card-bg">
+          <img src="assets/images/thirdcol.svg" class="img-fluid mb-3" alt="">
+          <div class="">
+            <h5 class="mb-3">Collaborate easily</h5>
+            <p class="mr-3"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+              Cras purus odio Nulla vel metus scelerisque</p>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 col-lg-4  mb-2">
+            <div class="media media-bg">
+              <img class="mr-3 img-fluid" src="assets/images/art3.png" alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0">Art Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+              </div>
             </div>
-            <div class="col-md-6">
-              <h3>Art Name</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,</p>
+          </div>
+          <div class="col-md-6 col-lg-4  mb-2">
+          
+            <div class="media">
+              <img class="mr-3 img-fluid" src="assets/images/art2.png" alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0">Art Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="media">
+              <img class="mr-3 img-fluid" src="assets/images/art3.png"  alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0">Art Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+              </div>
             </div>
           </div> -->
-          <div class="media">
-            <img class="mr-3 img-fluid" src="assets/images/art2.png" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Art Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, 
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="media">
-            <img class="mr-3 img-fluid" src="assets/images/art3.png"  alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Art Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </section>
+</section>
+<!-- CONTACT US -->
+<section class="contact">
+<div class="container">
+<div class="row d-flex align-items-center justify-content-between">
+  <div class="col-sm-2 ">
+      <img class="img-fluid" src="assets/images/contactus.png" alt="">
+  </div>
+  <form class="col-sm-10">
+      <div class="form-group mb-5">
+        <input type="email" class="form-control mt-2 pr-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Full Name">
+      </div>
+      <div class="form-group mb-5">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+      </div>
+      <div class="form-group mb-5">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Message">
+      </div>
+  </form>
+
+</div>
+</div>
+</section>

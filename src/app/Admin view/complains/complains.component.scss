@@ -1,0 +1,27 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/functions';
+.m-left{
+    margin-left: 300px;
+
+}
+.card-bg{
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+    padding: 20px 22px;
+    border-radius: 7px;
+    h2{
+        @extend %semisegoe;
+        color: $mainColor;
+    }
+    p{
+        @extend %semisegoe;
+        color: #ddd;
+    }
+
+}
+
+.btn{
+@extend %btn;
+background: $mainColor;
+padding: 10px 25px;
+outline: none
+}

@@ -5,17 +5,20 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" routerLink="">logo</a>
+      <a class="navbar-brand" routerLink="">
+        <img src="assets/images/Logo.svg" class="img-fluid" alt="">
+
+      </a>
     </nav>
   </div>
 </div>
 <div class="signup-bg">
-
 <div class="container ">
   <div class="row align-items-center justify-content-center">
     <div class="col-md-6 col-md-offset-3 col-xs-12 col-sm-10">
       <div class="signupform ">
-        <!-- <div class="container justify-content-center mb-5">
+
+  <!-- <div class="container justify-content-center mb-5">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8"> -->
       <h2 class="">Sign Up</h2>
@@ -40,7 +43,7 @@
             </div>
             <div class="form-group col-md-6">
               <mat-form-field class="example-full-width  d-block">
-                <input matInput placeholder="Last Name" value="" formControlName="LName">
+                <input matInput  placeholder="Last Name" value="" formControlName="LName">
                 <button mat-button matPrefix mat-icon-button>
                   <mat-icon>account_circle</mat-icon>
                 </button>
@@ -67,7 +70,9 @@
               <span *ngIf="Email.errors&& !Email.errors['required']">
                 Email is in correct
             </span>
-
+            <!-- <span *ngIf="Email.errors&& !Email.errors['emailexist']">
+                Email already exist
+            </span> -->
           </div>
           <div class="form-row">
 
@@ -156,14 +161,14 @@
           <div class="form-row">
 
             <div class="form-group col-md-6">
-              <!-- <label for="Birthday">birthDate</label>
-            <input type="text" formControlName="Birthday" class="form-control"> -->
+              <!-- <label for="Birthday">birthDate</label> -->
+            <!-- <input type="text" formControlName="Birthday" class="form-control"> -->
               <mat-form-field>
                 <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="Birthday">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
-              <small>(optional)</small>
+              <!-- <small>(optional)</small> -->
             </div>
             <div class="form-group col-md-6">
               <!-- <label for="SSN">SSN</label>
@@ -322,7 +327,7 @@
               <mat-form-field class="example-full-width">
                 <textarea matInput placeholder="PersonDescription" formControlName="PersonDescription"></textarea>
               </mat-form-field>
-              <span *ngIf="PersonDescription.invalid &&PersonDescription.touched" class="d-inline-block grey d-block">
+              <span *ngIf="PersonDescription.invalid &&PersonDescription.touched" class="d-inline-block red d-block">
                 this is field is required
               </span>
             </div>

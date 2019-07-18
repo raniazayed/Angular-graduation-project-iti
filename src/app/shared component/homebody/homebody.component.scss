@@ -3,10 +3,15 @@
 .card{
     box-shadow: 0 1px 6px rgba(57,73,76,.35);
 }
+.padding{
+    padding :60px 0;
+}
 .line{
     @extend %line;
 }
-
+.rating{
+    @extend %rating;
+}
 
     h1{
         color: $mainColor;
@@ -16,7 +21,7 @@
         background: $bgColor;
         .artdeal-content{
             h3{
-                color: $mainColor;
+                color: #737373;
             }
             p{
                 color: $fontcolor;
@@ -24,15 +29,20 @@
                 font-size: 0.8rem;
                 line-height: 1.2rem;
             }
-            button{
+            button,.btn{
                 @include button;
                 text-transform: uppercase;
                 @include rounded;
+                background: $mainColor;
             }
         }
     }
+    .w-70{
+        width: 70%;
+    }
 // ART SECTION
 section.arts{
+    padding: 10px 0;
     div.media{
         background: $secondaryColor !important;
         color: white;
@@ -43,7 +53,36 @@ section.arts{
         .media-body{
             margin-top: 20px;
             margin-right: 20px;
-            @include typoStyle($segoeuiFont,0.8rem)
+            @include typoStyle($RalewayFont,0.8rem)
         }
     }
 }
+.card-bg{
+
+    .border-right{
+        border-right:3px solid $secondaryColor !important;
+    }
+    h5{
+        color: $mainColor;
+        @extend %boldsegoe
+    }
+    p{
+        color: $fontcolor;
+        @extend %regularsegoe;
+        font-size: 0.9rem;
+        line-height: 22px;
+    }
+}
+// CONTACT US
+.contact{
+    background: #dfdddd;
+    input{
+        width: 100%;
+        border: none;
+        background: white;
+        padding: 0.2rem 2%;
+    }
+
+
+}
+
