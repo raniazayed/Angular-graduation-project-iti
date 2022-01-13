@@ -2,9 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Development server
+- ArtDeal website : it’s a freelancer website that has a Dashboard , private chat with signal R technology.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Installation
+
+Run `git clone https://github.com/raniazayed/Angular-graduation-project-iti.git`.Run `npm install` and then Run `ng serve`.
 
 ## Code scaffolding
 
